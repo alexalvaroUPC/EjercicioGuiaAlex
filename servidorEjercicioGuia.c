@@ -7,6 +7,11 @@
 #include <stdio.h>
 #include <pthread.h>
 
+int contador;
+
+//Estructura necesaria para acceso excluyente
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
 void *AtenderCliente (void *socket)
 {
 	int sock_conn = * (int *) socket;
@@ -31,7 +36,7 @@ void *AtenderCliente (void *socket)
 		
 		char nombre[20];
 		
-		if (codigo != 0)
+		if ((codigo != 0)&&(codigo != 4))
 		{
 			p = strtok(NULL, "/");
 			strcpy (nombre, p);
@@ -41,6 +46,8 @@ void *AtenderCliente (void *socket)
 		
 		if (codigo == 0) //peticion para desconectarse
 			terminar = 1;
+		else if (codigo == 4)
+			sprintf(respuesta, "%d", contador);
 		else if (codigo == 1)
 			sprintf(respuesta, "%d", strlen (nombre));
 		else if (codigo == 2)
@@ -62,6 +69,13 @@ void *AtenderCliente (void *socket)
 			{
 				printf ("Respuesta: %s\n", respuesta);
 				write (sock_conn, respuesta, strlen(respuesta));
+			}
+			
+			if ((codigo == 1) || (codigo == 2) || (codigo == 3))
+			{
+				pthread_mutex_lock(&mutex); //No me interrumpas
+				contador++;
+				pthread_mutex_unlock(&mutex); //Ahora puede interrumpir porque mi contador no es 0
 			}
 			
 	}
@@ -92,6 +106,8 @@ int main(int argc, char *argv[])
 	//La cola de peticiones pendientes no podr? ser superior a 4
 	if (listen(sock_listen, 4) < 0)
 		printf("Error en el Listen");
+	
+	contador = 0;
 	int i;
 	int sockets[100];
 	pthread_t thread[100];

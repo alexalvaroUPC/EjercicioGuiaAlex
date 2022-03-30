@@ -34,11 +34,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Longitud = new System.Windows.Forms.RadioButton();
-            this.Bonito = new System.Windows.Forms.RadioButton();
             this.altura = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.alturaBox = new System.Windows.Forms.TextBox();
+            this.Bonito = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.contLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,25 +48,28 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 25);
+            this.label2.Location = new System.Drawing.Point(34, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 25);
+            this.label2.Size = new System.Drawing.Size(132, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
             // nombre
             // 
-            this.nombre.Location = new System.Drawing.Point(116, 31);
+            this.nombre.Location = new System.Drawing.Point(174, 48);
+            this.nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(164, 20);
+            this.nombre.Size = new System.Drawing.Size(244, 26);
             this.nombre.TabIndex = 3;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(25, 40);
+            this.button1.Location = new System.Drawing.Point(38, 62);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 31);
+            this.button1.Size = new System.Drawing.Size(224, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "conectar";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,9 +77,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(126, 157);
+            this.button2.Location = new System.Drawing.Point(189, 242);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(112, 35);
             this.button2.TabIndex = 5;
             this.button2.Text = "Enviar";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,9 +97,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.nombre);
-            this.groupBox1.Location = new System.Drawing.Point(23, 104);
+            this.groupBox1.Location = new System.Drawing.Point(34, 160);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 202);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(544, 311);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Peticion";
@@ -101,31 +109,22 @@
             // Longitud
             // 
             this.Longitud.AutoSize = true;
-            this.Longitud.Location = new System.Drawing.Point(116, 91);
+            this.Longitud.Location = new System.Drawing.Point(174, 140);
+            this.Longitud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Longitud.Name = "Longitud";
-            this.Longitud.Size = new System.Drawing.Size(166, 17);
+            this.Longitud.Size = new System.Drawing.Size(247, 24);
             this.Longitud.TabIndex = 7;
             this.Longitud.TabStop = true;
             this.Longitud.Text = "Dime la longitud de mi nombre";
             this.Longitud.UseVisualStyleBackColor = true;
             // 
-            // Bonito
-            // 
-            this.Bonito.AutoSize = true;
-            this.Bonito.Location = new System.Drawing.Point(116, 68);
-            this.Bonito.Name = "Bonito";
-            this.Bonito.Size = new System.Drawing.Size(156, 17);
-            this.Bonito.TabIndex = 8;
-            this.Bonito.TabStop = true;
-            this.Bonito.Text = "Dime si mi nombre es bonito";
-            this.Bonito.UseVisualStyleBackColor = true;
-            // 
             // altura
             // 
             this.altura.AutoSize = true;
-            this.altura.Location = new System.Drawing.Point(116, 119);
+            this.altura.Location = new System.Drawing.Point(174, 183);
+            this.altura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.altura.Name = "altura";
-            this.altura.Size = new System.Drawing.Size(98, 17);
+            this.altura.Size = new System.Drawing.Size(144, 24);
             this.altura.TabIndex = 7;
             this.altura.TabStop = true;
             this.altura.Text = "Dime si soy alto";
@@ -134,38 +133,75 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 91);
+            this.label3.Location = new System.Drawing.Point(28, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Altura";
             // 
             // alturaBox
             // 
-            this.alturaBox.Location = new System.Drawing.Point(15, 110);
+            this.alturaBox.Location = new System.Drawing.Point(22, 169);
+            this.alturaBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.alturaBox.Name = "alturaBox";
-            this.alturaBox.Size = new System.Drawing.Size(62, 20);
+            this.alturaBox.Size = new System.Drawing.Size(91, 26);
             this.alturaBox.TabIndex = 9;
+            // 
+            // Bonito
+            // 
+            this.Bonito.AutoSize = true;
+            this.Bonito.Location = new System.Drawing.Point(174, 105);
+            this.Bonito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Bonito.Name = "Bonito";
+            this.Bonito.Size = new System.Drawing.Size(233, 24);
+            this.Bonito.TabIndex = 8;
+            this.Bonito.TabStop = true;
+            this.Bonito.Text = "Dime si mi nombre es bonito";
+            this.Bonito.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(25, 332);
+            this.button3.Location = new System.Drawing.Point(38, 511);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 53);
+            this.button3.Size = new System.Drawing.Size(220, 82);
             this.button3.TabIndex = 10;
             this.button3.Text = "desconectar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(747, 160);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(224, 84);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "¿Cuántos servicios?";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // contLbl
+            // 
+            this.contLbl.Location = new System.Drawing.Point(747, 265);
+            this.contLbl.Name = "contLbl";
+            this.contLbl.Size = new System.Drawing.Size(224, 90);
+            this.contLbl.TabIndex = 12;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 562);
+            this.ClientSize = new System.Drawing.Size(1112, 865);
+            this.Controls.Add(this.contLbl);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -188,6 +224,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox alturaBox;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label contLbl;
     }
 }
 
